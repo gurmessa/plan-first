@@ -98,11 +98,15 @@ rm -rf ~/.agents/skills/plan-first
 ## Repo layout
 
 ```
-SKILL.md                  # the skill entry point
-assets/templates/         # blank document templates
-assets/diagrams/          # Mermaid conventions and sources
-examples/flightfinder/    # a complete worked example
+SKILL.md                    # the skill entry point
+assets/templates/           # blank document templates (see the index)
+assets/diagrams/            # Mermaid conventions and sources
+examples/flightfinder/      # a complete worked example
+docs/compatibility.md       # structural validation + runtime reports
 ```
+
+- Templates index: [`assets/templates/README.md`](assets/templates/README.md)
+- Full example: [`examples/flightfinder/`](examples/flightfinder/)
 
 ## Compatibility
 
@@ -111,6 +115,14 @@ Tested with agents that implement the Agent Skills specification. See
 
 If you test it on another agent, a PR documenting the result is welcome.
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Compatibility reports are especially welcome.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+[Compatibility](docs/compatibility.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md)
