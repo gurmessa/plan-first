@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    participant U as User
+    participant E as Entry point
+    participant O as Orchestrator
+    participant X as External system
+    U->>E: request
+    E->>O: dispatch
+    alt required information missing
+        O-->>E: ask a question
+        E-->>U: question
+        U->>E: answer
+        E->>O: resume
+    end
+    O->>X: call
+    X-->>O: response
+    O->>O: format result
+    O-->>E: output
+    E-->>U: output

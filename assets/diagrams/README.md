@@ -10,12 +10,23 @@ Diagrams are **sources**, not screenshots.
 - Prefer left-to-right flowcharts for pipelines and `sequenceDiagram` for request flows.
 - Do not use binary-only images for architecture; they cannot be reviewed in a diff.
 
-Suggested diagram set for a planned project:
+## Diagram set
 
 | File | Teaches |
 |------|---------|
 | `planning-pipeline.mmd` | The order of planning stages |
+| `doc-dependencies.mmd` | Which document must exist before which |
 | `component.mmd` | How the system is split into parts |
-| `sequence-primary.mmd` | One request through the system |
-| `state-session.mmd` | What state exists and when it resets |
+| `sequence-primary.mmd` | One request through the system, including a question step |
+| `state-session.mmd` | What state exists, who owns it, and when it resets |
 | `milestones.mmd` | Dependencies between milestones |
+
+## Rendering
+
+GitHub renders Mermaid in Markdown natively. To export images for slides or docs, use the
+Mermaid CLI:
+
+```bash
+npm install -g @mermaid-js/mermaid-cli
+mmdc -i planning-pipeline.mmd -o planning-pipeline.svg
+```

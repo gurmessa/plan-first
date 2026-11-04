@@ -1,0 +1,8 @@
+flowchart LR
+    M0[M0 Foundation<br/>scaffold + config] --> M1[M1 Core capability]
+    M1 --> M2[M2 Interface]
+    M2 --> M3[M3 Integration]
+    M3 --> M4[M4 Hardening]
+    M4 --> M5[M5 Verification]
+    M1 -.tests.-> M5
+    M2 -.tests.-> M5

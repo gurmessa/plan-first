@@ -1,0 +1,12 @@
+flowchart TD
+    IDEA[Idea brief] --> PRD[PRD]
+    PRD --> ARCH[Architecture]
+    PRD --> FLOW[Workflow]
+    ARCH --> STACK[Tech stack]
+    FLOW --> STACK
+    STACK --> PLAN[Implementation plan]
+    PRD --> PLAN
+    PLAN --> STATUS[Status tracker]
+    PLAN --> VERIFY[Verification]
+    STATUS --> VERIFY
+    VERIFY -.findings.-> PRD

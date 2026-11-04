@@ -1,0 +1,17 @@
+stateDiagram-v2
+    [*] --> Idle
+    Idle --> Working: input received
+    Working --> AwaitingAnswer: information missing
+    AwaitingAnswer --> Working: answer received
+    Working --> Done: result produced
+    Done --> Working: follow-up
+    Done --> [*]: session ends
+    AwaitingAnswer --> [*]: session reset
+    Idle --> [*]: session reset
+    note right of AwaitingAnswer
+        Real user input required.
+        Never auto-advance.
+    end note
+    note right of Done
+        Reset clears all state for the session.
+    end note

@@ -1,0 +1,31 @@
+flowchart LR
+    subgraph Interface
+        UI[Entry point<br/>UI / CLI / API]
+    end
+    subgraph Core
+        ORCH[Orchestrator]
+        RULES[Rules / prompts]
+    end
+    subgraph Capabilities
+        TOOL[Internal tools]
+        SVC[Services]
+    end
+    subgraph External
+        API[External APIs / MCP]
+        LLM[Model provider]
+    end
+    subgraph CrossCutting
+        CFG[Configuration]
+        STATE[(State store)]
+        LOG[Logging / tracing]
+    end
+
+    UI --> ORCH
+    ORCH --> RULES
+    ORCH --> TOOL
+    ORCH --> SVC
+    TOOL --> API
+    ORCH --> LLM
+    CFG -.-> ORCH
+    ORCH <--> STATE
+    ORCH -.-> LOG
